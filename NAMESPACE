@@ -1,0 +1,21 @@
+useDynLib(cspaper)
+
+import(dplyr)
+import(ggplot2)
+importFrom(gridExtra, grid.arrange)
+importFrom(magrittr, "%>%")
+import(pracma)
+import(tidyr)
+
+export(intro_simulations)
+export(plot_intro)
+export(bounded_simulations)
+export(save_all_plots)
+
+export(poly_stitching_plot)
+export(plot_normalized_boundaries)
+export(bernoulli_ate_plot)
+export(ellipse_plot)
+export(discrete_mixture_plot)
+export(make_finite_lil_plot)
+export(make_finite_lil_plot_simplified)

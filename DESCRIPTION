@@ -1,0 +1,10 @@
+Package: cspaper
+Title: Code to reproduce simulations and plots for "Time-uniform, nonparametric, nonasymptotic confidence sequences"
+Version: 0.0.0.9000
+Authors@R: person("Steve", "Howard", email = "dev@gostevehoward.com", role = c("aut", "cre"))
+Description: All code necessary to reproduce simulation results and all plots from Howard, S. R., Ramdas, A., McAuliffe, J., and Sekhon, J. (2019), "Time-uniform, nonparametric, nonasymptotic confidence sequences", https://arxiv.org/abs/1810.08240.
+Depends: R (>= 3.4.2), Rcpp, BH, confseq, dplyr, extrafont, magrittr, ggplot2, gridExtra, pracma, RColorBrewer, tidyr
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+LinkingTo: Rcpp, BH, confseq
