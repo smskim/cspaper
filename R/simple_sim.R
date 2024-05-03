@@ -51,7 +51,7 @@ make_stopping_time_plot <- function(results, alpha, name_map=NULL,
               ylim=c(0, max(1.05 * alpha, max_false_positive_rate)),
               expand=F
           )
-        + right_theme(format='paper')
+        # + right_theme(format='paper')
         + theme(legend.position='top')
     )
     list(data=stopping_time_data, plot=stopping_time_plot)
@@ -99,7 +99,7 @@ plot_results <- function(results, alpha, title=NULL, use_legend=FALSE,
                   bquote('Mean CI width' %*% sqrt(italic(t)))
               )
             + scale_color_manual(NULL, values=COLORS)
-            + right_theme(format='paper')
+            # + right_theme(format='paper')
             + coord_cartesian(
                   xlim=c(10, num_steps),
                   ylim=c(0, y_max),
@@ -124,7 +124,7 @@ plot_results <- function(results, alpha, title=NULL, use_legend=FALSE,
             + annotation_logticks(sides='l')
             + scale_color_manual(NULL, values=COLORS)
             + scale_linetype_manual(NULL, values=c(5, 3, 2, 4, 1))
-            + right_theme(format='paper')
+            # + right_theme(format='paper')
             + coord_cartesian(
                   xlim=c(10, num_steps),
                   ylim=c(0.8 * min_width, 1.1 * max_width),
@@ -232,7 +232,7 @@ make_intro_plot <- function(results, alpha, title=NULL, use_legend=TRUE) {
         + ylab('Confidence bounds')
         + scale_color_manual(NULL, values=COLORS)
         + scale_linetype_manual(NULL, values=c(3, 4, 2, 1))
-        + right_theme(format='paper')
+        # + right_theme(format='paper')
         + coord_cartesian(
               xlim=c(10, num_steps),
               ylim=c(-1, 1),
