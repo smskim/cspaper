@@ -3,7 +3,7 @@ DEFAULT_SEED <- 1948505650
 PAPER_WIDTH <- 5
 
 POINTS_TO_MM <- 0.3528
-GG_FAMILY <- 'CM Roman'
+GG_FAMILY <- 'TT Times New Roman'
 GG_SLIDE_FAMILY <- 'Fira Sans Light'
 
 base_modifications <- theme(
