@@ -273,12 +273,9 @@ load_and_plot <- function(filename, save=FALSE, format='paper', ...) {
     if (save) {
         label <- paste0(filename, '.plot')
         height_factor <- if (use_legend) 1.25 else 1
-        
-        # save_plot doesn't seem to work...
-        ggsave(label)
-        # save_plot(plot$plot, label, format,
-        #           list(paper=c(5, 1.8 * height_factor),
-        #                slides=c(5.5, 2.5 * height_factor)))
+        save_plot(plot$plot, label, format,
+                  list(paper=c(5, 1.8 * height_factor),
+                       slides=c(5.5, 2.5 * height_factor)))
     }
     return(plot)
 }
@@ -363,13 +360,12 @@ plot_intro <- function(save=FALSE) {
     }
 }
 
-save_all_plots <- function(save = FALSE) {
-    p1 <- load_and_plot('ev_ber_50_simulations.robj', title='Bernoulli(0.5)',
-                        save = save)
+save_all_plots <- function() {
+    p1 <- load_and_plot('ev_ber_50_simulations.robj', title='Bernoulli(0.5)')
     p2 <- load_and_plot('ev_ber_01_simulations.robj', title='Bernoulli(0.01)',
-                        y_label=FALSE, save = save)
+                        y_label=FALSE)
     p3 <- load_and_plot('ev_three_point_simulations.robj', title='Three point',
-                        y_label=FALSE, save = save)
+                        y_label=FALSE)
     final <- gridExtra::arrangeGrob(p1$plot, p2$plot, p3$plot, ncol=3,
                                     widths=c(4.3, 4, 4))
     final <- gridExtra::arrangeGrob(final, p3$legend, ncol=1, heights=c(7, 1))
