@@ -215,6 +215,10 @@ make_intro_plot <- function(results, alpha, title=NULL, use_legend=TRUE) {
                    name=factor(name, levels=c('z_test', 'hoeffding', 'linear',
                                               'curved')))
     )
+    
+    # Fix color issues that were not consistent for LHS and RHS Figure 1 
+    COLORS2 = c("#7570B3","#E7298A","#1B9E77","#D95F02")
+    
     random_walk_plot <- (
         ggplot(random_walk_data, aes(t))
         + geom_line(y=0, color='gray')
@@ -230,7 +234,7 @@ make_intro_plot <- function(results, alpha, title=NULL, use_legend=TRUE) {
               breaks=scales::trans_breaks("log10", function(x) 10^x),
               labels=scales::trans_format("log10", scales::math_format(10^.x)))
         + ylab('Confidence bounds')
-        + scale_color_manual(NULL, values=COLORS)
+        + scale_color_manual(NULL, values=COLORS2)
         + scale_linetype_manual(NULL, values=c(3, 4, 2, 1))
         # + right_theme(format='paper')
         + coord_cartesian(
